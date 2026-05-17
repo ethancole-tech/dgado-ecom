@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Shazab Ali — Industrial & Manufacturing Engineering Student, UET Lahore.">
+<title>Shazab Ali</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cream:#f9f7f3;
+  --ink:#1c1a17;
+  --ink2:#57534c;
+  --ink3:#9a9590;
+  --gold:#b8945a;
+  --gold-bg:#f7f1e8;
+  --gold-bd:#e5d5b8;
+  --rule:#e0dbd2;
+  --white:#ffffff;
+  --dark:#161410;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);line-height:1.7;font-size:15px;-webkit-font-smoothing:antialiased}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(249,247,243,.96);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--rule);
+  height:56px;display:flex;align-items:center;justify-content:space-between;
+  padding:0 2.5rem;
+}
+.nav-left{display:flex;align-items:center;gap:.7rem;text-decoration:none}
+.nav-mono{
+  width:30px;height:30px;background:var(--ink);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cormorant Garamond',serif;font-size:.85rem;color:var(--white);
+  flex-shrink:0;letter-spacing:.02em;
+}
+.nav-name{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--ink);letter-spacing:.02em}
+.nav-links{display:flex;gap:1.6rem;list-style:none}
+.nav-links a{
+  font-size:11px;font-weight:400;color:var(--ink2);
+  letter-spacing:.1em;text-transform:uppercase;text-decoration:none;
+  transition:color .2s;
+}
+.nav-links a:hover{color:var(--ink)}
+.nav-btn{
+  font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;
+  background:var(--ink);color:var(--white);padding:.45rem 1.1rem;
+  text-decoration:none;transition:background .2s;
+}
+.nav-btn:hover{background:#2d2a24}
+
+/* ── WRAPPER ── */
+.wrap{max-width:940px;margin:0 auto;padding:0 2.5rem}
+
+/* ── HERO ── */
+#hero{
+  padding-top:56px;background:var(--white);
+  border-bottom:1px solid var(--rule);
+}
+.hero-inner{
+  max-width:940px;margin:0 auto;padding:0 2.5rem;
+  display:grid;grid-template-columns:1fr auto;
+  align-items:center;gap:3rem;
+  min-height:calc(100vh - 56px);
+}
+.hero-content{padding:3rem 0}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:.6rem;
+  font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:1.5rem;
+}
+.hero-tag::before{content:'';width:24px;height:1px;background:var(--gold);flex-shrink:0}
+h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(3.2rem,6vw,5.5rem);
+  font-weight:300;line-height:1.0;letter-spacing:-.02em;
+  color:var(--ink);margin-bottom:.75rem;
+}
+h1 em{font-style:italic;color:var(--gold)}
+.hero-degree{
+  font-size:.95rem;font-weight:400;color:var(--ink2);
+  margin-bottom:.3rem;
+}
+.hero-degree strong{color:var(--ink);font-weight:500}
+.hero-loc{
+  font-size:12px;color:var(--ink3);letter-spacing:.04em;
+  margin-bottom:1.75rem;display:flex;align-items:center;gap:.4rem;
+}
+.hero-bio{
+  font-size:1rem;font-weight:300;color:var(--ink2);
+  line-height:1.9;max-width:460px;margin-bottom:2.25rem;
+}
+.hero-actions{display:flex;gap:.9rem;align-items:center;margin-bottom:3rem}
+.btn-primary{
+  background:var(--ink);color:var(--white);
+  padding:.72rem 1.7rem;font-size:12px;font-weight:500;
+  letter-spacing:.1em;text-transform:uppercase;
+  text-decoration:none;transition:background .2s;display:inline-block;
+}
+.btn-primary:hover{background:#2d2a24}
+.btn-secondary{
+  font-size:12px;font-weight:400;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--ink2);text-decoration:none;
+  padding-bottom:2px;border-bottom:1px solid var(--rule);
+  transition:color .2s,border-color .2s;
+}
+.btn-secondary:hover{color:var(--ink);border-color:var(--ink2)}
+.hero-stats{
+  display:flex;gap:0;
+  border-top:1px solid var(--rule);
+  padding-top:0;
+}
+.hstat{
+  padding:1.35rem 2rem 1.35rem 0;
+  margin-right:2rem;border-right:1px solid var(--rule);
+}
+.hstat:last-child{border-right:none;margin-right:0}
+.hstat-n{
+  font-family:'Cormorant Garamond',serif;font-size:2.1rem;
+  font-weight:300;color:var(--ink);line-height:1;margin-bottom:.25rem;
+}
+.hstat-l{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);line-height:1.4}
+
+/* Photo column */
+.hero-photo-col{
+  display:flex;flex-direction:column;align-items:center;gap:1rem;
+  padding:3rem 0;
+  align-self:center;
+}
+.photo-frame{
+  position:relative;
+  width:180px;
+}
+.photo-frame img{
+  width:180px;height:180px;
+  object-fit:cover;object-position:center top;
+  display:block;
+  image-rendering:auto;
+  border:1px solid var(--rule);
+}
+.photo-badge{
+  position:absolute;bottom:-12px;left:50%;transform:translateX(-50%);
+  background:var(--ink);color:var(--white);
+  font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;
+  padding:5px 14px;white-space:nowrap;
+}
+.photo-avail{
+  display:flex;align-items:center;gap:.5rem;
+  font-size:11px;color:var(--ink3);margin-top:.75rem;
+}
+.avail-dot{
+  width:7px;height:7px;border-radius:50%;
+  background:#4ade80;flex-shrink:0;
+  box-shadow:0 0 0 3px rgba(74,222,128,.2);
+  animation:pulse 2s ease infinite;
+}
+@keyframes pulse{
+  0%,100%{box-shadow:0 0 0 3px rgba(74,222,128,.2)}
+  50%{box-shadow:0 0 0 6px rgba(74,222,128,.07)}
+}
+
+/* ── SECTION ── */
+.sec{padding:4rem 0;border-bottom:1px solid var(--rule)}
+.sec:last-child{border-bottom:none}
+.sec-head{display:flex;align-items:center;gap:.85rem;margin-bottom:2.75rem}
+.sec-n{font-family:'Cormorant Garamond',serif;font-size:.8rem;color:var(--gold);letter-spacing:.06em}
+.sec-t{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--ink);letter-spacing:-.01em}
+.sec-r{flex:1;height:1px;background:var(--rule)}
+
+/* ── ABOUT ── */
+.about-layout{display:grid;grid-template-columns:1fr 220px;gap:3.5rem;align-items:start}
+.about-body p{font-size:.97rem;font-weight:300;color:var(--ink2);line-height:1.95;margin-bottom:1.1rem}
+.about-body p:last-child{margin-bottom:0}
+.about-body strong{color:var(--ink);font-weight:500}
+.verse{border-left:2px solid var(--gold);padding:.5rem 0 .5rem 1.3rem;margin:1.75rem 0}
+.verse-text{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;color:var(--ink);line-height:1.6;margin:0}
+.verse-src{font-size:11px;color:var(--ink3);letter-spacing:.06em;margin-top:.3rem}
+
+.info-card{background:var(--white);border:1px solid var(--rule)}
+.info-row{padding:.85rem 1rem;border-bottom:1px solid var(--rule)}
+.info-row:last-child{border-bottom:none}
+.info-lbl{font-size:10px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.35rem}
+.info-val{font-size:13px;color:var(--ink);line-height:1.6}
+
+.lang-row{display:flex;align-items:center;gap:.6rem;padding:.38rem 0;border-bottom:1px solid var(--rule)}
+.lang-row:last-child{border-bottom:none}
+.lang-n{font-size:12.5px;font-weight:500;color:var(--ink);min-width:52px}
+.lang-t{flex:1;height:2.5px;background:var(--rule);border-radius:2px;overflow:hidden}
+.lang-f{height:100%;background:var(--gold);border-radius:2px}
+.lang-l{font-size:10px;color:var(--ink3);min-width:26px;text-align:right}
+
+/* ── SKILLS ── */
+.skill-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:var(--rule);border:1px solid var(--rule);
+}
+.skill-cell{
+  background:var(--cream);padding:1.5rem 1.3rem;
+  transition:background .2s;position:relative;overflow:hidden;
+}
+.skill-cell::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;
+  height:2px;background:var(--gold);
+  transform:scaleX(0);transform-origin:left;transition:transform .3s;
+}
+.skill-cell:hover{background:var(--white)}
+.skill-cell:hover::after{transform:scaleX(1)}
+.sk-ico{font-size:1.25rem;margin-bottom:.6rem;display:block;line-height:1}
+.sk-name{font-size:13px;font-weight:500;color:var(--ink);margin-bottom:.25rem}
+.sk-desc{font-size:11px;color:var(--ink3);line-height:1.55}
+
+/* ── TIMELINE ── */
+.tl{position:relative;padding-left:1.85rem}
+.tl::before{
+  content:'';position:absolute;left:2px;top:10px;bottom:10px;
+  width:1px;background:linear-gradient(to bottom,var(--gold),var(--rule) 80%,transparent);
+}
+.tl-item{position:relative;padding-bottom:2.25rem}
+.tl-item:last-child{padding-bottom:0}
+.tl-dot{
+  position:absolute;left:-2.1rem;top:6px;
+  width:7px;height:7px;border-radius:50%;
+  background:var(--gold);border:2px solid var(--cream);
+  box-shadow:0 0 0 1px var(--gold);
+}
+.tl-tag{
+  display:inline-block;font-size:9.5px;font-weight:500;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--gold);
+  background:var(--gold-bg);border:1px solid var(--gold-bd);
+  padding:2px 8px;margin-bottom:.4rem;
+}
+.tl-role{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:500;color:var(--ink);margin-bottom:.15rem;line-height:1.2}
+.tl-org{font-size:12px;color:var(--ink2);margin-bottom:.5rem}
+.tl-desc{font-size:12.5px;color:var(--ink2);font-weight:300;line-height:1.8;max-width:560px}
+
+/* ── PROJECTS ── */
+.proj-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:1px;background:var(--rule);border:1px solid var(--rule);
+}
+.proj-card{background:var(--cream);padding:1.6rem 1.4rem;transition:background .2s}
+.proj-card:hover{background:var(--white)}
+.proj-card.wide{
+  grid-column:1/-1;background:var(--white);
+  display:grid;grid-template-columns:auto 1fr;gap:1.5rem;align-items:start;
+}
+.proj-tag{
+  display:inline-block;font-size:9.5px;font-weight:500;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--gold);
+  background:var(--gold-bg);border:1px solid var(--gold-bd);
+  padding:2px 8px;margin-bottom:.75rem;
+}
+.proj-tag.fyp{background:var(--ink);color:var(--white);border-color:var(--ink)}
+.proj-name{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:500;color:var(--ink);margin-bottom:.45rem;line-height:1.25}
+.proj-desc{font-size:12px;color:var(--ink2);font-weight:300;line-height:1.75}
+.proj-pills{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.65rem}
+.pill{font-size:9.5px;color:var(--ink3);border:1px solid var(--rule);padding:2px 7px}
+
+/* ── GOALS ── */
+.goals-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.goal-card{background:var(--white);border:1px solid var(--rule);padding:1.6rem 1.4rem;transition:border-color .2s}
+.goal-card:hover{border-color:var(--gold-bd)}
+.goal-ico{font-size:1.3rem;margin-bottom:.75rem;display:block}
+.goal-title{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:500;color:var(--ink);margin-bottom:.4rem}
+.goal-desc{font-size:12.5px;color:var(--ink2);font-weight:300;line-height:1.7}
+.badge{display:inline-block;margin-top:.75rem;font-size:9.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:3px 9px}
+.badge-y{color:#92400e;background:#fef3c7;border:1px solid #fde68a}
+.badge-b{color:#1e40af;background:#dbeafe;border:1px solid #bfdbfe}
+
+/* ── INTERESTS — fixed clean layout ── */
+.int-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:1.2rem;
+}
+.int-card{
+  background:var(--white);border:1px solid var(--rule);
+  padding:1.75rem 1.25rem 1.5rem;text-align:center;
+  transition:border-color .2s,transform .2s;
+}
+.int-card:hover{border-color:var(--gold-bd);transform:translateY(-2px)}
+.int-ico{font-size:1.75rem;margin-bottom:.75rem;display:block;line-height:1}
+.int-name{font-size:13.5px;font-weight:500;color:var(--ink);margin-bottom:.35rem}
+.int-note{font-size:11.5px;color:var(--ink3);line-height:1.55}
+
+/* Achievements — separate row, clean */
+.ach-row{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:1.2rem;margin-top:1.2rem;
+}
+.ach-cell{
+  background:var(--dark);padding:1.5rem 1rem;text-align:center;
+  border:1px solid rgba(255,255,255,.04);
+}
+.ach-num{
+  font-family:'Cormorant Garamond',serif;font-size:1.8rem;
+  font-weight:300;color:var(--gold);line-height:1;margin-bottom:.3rem;
+}
+.ach-lbl{font-size:10px;color:rgba(255,255,255,.4);letter-spacing:.1em;text-transform:uppercase}
+
+/* ── WRITING ── */
+.write-note{font-size:.95rem;font-weight:300;color:var(--ink2);max-width:480px;line-height:1.85;margin-bottom:2rem}
+.write-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
+.write-card{
+  border:1px solid var(--rule);padding:1.5rem;background:var(--white);
+  transition:box-shadow .2s,transform .2s;display:flex;flex-direction:column;
+}
+.write-card:hover{box-shadow:0 4px 18px rgba(26,24,20,.06);transform:translateY(-2px)}
+.w-topic{font-size:10px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:.55rem}
+.w-title{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:500;color:var(--ink);line-height:1.3;margin-bottom:.45rem}
+.w-blurb{font-size:11px;color:var(--ink3);line-height:1.65;margin-bottom:1rem;flex:1}
+.w-foot{display:flex;align-items:center;justify-content:space-between;padding-top:.75rem;border-top:1px solid var(--rule);margin-top:auto}
+.w-status{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3)}
+.w-link{font-size:11px;color:var(--gold);text-decoration:none;font-weight:500}
+
+/* ── CONTACT ── */
+#contact{background:var(--dark);padding:4rem 0}
+#contact .sec-t{color:var(--white)}
+#contact .sec-r{background:rgba(255,255,255,.1)}
+#contact .sec-n{color:var(--gold)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.ct-lead{font-family:'Cormorant Garamond',serif;font-size:1.75rem;font-weight:300;color:var(--white);line-height:1.45;margin-bottom:1rem}
+.ct-lead em{font-style:italic;color:var(--gold)}
+.ct-body{font-size:13px;font-weight:300;color:rgba(255,255,255,.42);line-height:1.9;margin-bottom:1.4rem}
+.ct-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.5rem}
+.ctag{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.32);border:1px solid rgba(255,255,255,.1);padding:3px 10px}
+.avail-bar{
+  display:flex;align-items:center;gap:.65rem;
+  padding:.8rem 1rem;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);
+}
+.avail-txt{font-size:12px;color:rgba(255,255,255,.38);line-height:1.5}
+.avail-txt strong{color:rgba(255,255,255,.62);font-weight:500}
+.c-links{display:flex;flex-direction:column;gap:.65rem}
+.c-link{
+  display:flex;align-items:center;gap:.9rem;
+  padding:.95rem 1.1rem;border:1px solid rgba(255,255,255,.08);
+  text-decoration:none;transition:border-color .2s,background .2s;
+  position:relative;overflow:hidden;
+}
+.c-link::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;
+  width:2px;background:var(--gold);
+  transform:scaleY(0);transform-origin:center;transition:transform .25s;
+}
+.c-link:hover{border-color:rgba(255,255,255,.15);background:rgba(255,255,255,.02)}
+.c-link:hover::before{transform:scaleY(1)}
+.c-ico{font-size:.9rem;opacity:.6;flex-shrink:0}
+.c-lbl{font-size:9.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:2px}
+.c-val{font-size:12.5px;color:rgba(255,255,255,.56)}
+.c-arr{margin-left:auto;color:rgba(255,255,255,.18);font-size:.9rem;transition:color .2s,transform .2s}
+.c-link:hover .c-arr{color:var(--gold);transform:translateX(3px)}
+
+/* ── FOOTER ── */
+footer{
+  background:#0e0d0a;padding:1.4rem 2.5rem;
+  display:flex;align-items:center;justify-content:space-between;
+  border-top:1px solid rgba(255,255,255,.05);
+}
+.ft-l{font-family:'Cormorant Garamond',serif;font-size:.9rem;color:rgba(255,255,255,.2)}
+.ft-r{font-size:11px;color:rgba(255,255,255,.12)}
+
+/* ── REVEAL ── */
+.rv{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:translateY(0)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:720px){
+  nav{padding:0 1rem}
+  .nav-links,.nav-btn{display:none}
+  .wrap{padding:0 1.25rem}
+  .hero-inner{grid-template-columns:1fr;padding:0 1.25rem;min-height:auto;padding-top:2rem;padding-bottom:2rem}
+  .hero-photo-col{order:-1;padding:1.5rem 0 0}
+  .hero-stats{flex-wrap:wrap}
+  .hstat{padding:1rem 1.5rem 1rem 0;margin-right:1.5rem}
+  .about-layout{grid-template-columns:1fr}
+  .skill-grid{grid-template-columns:1fr 1fr}
+  .proj-grid{grid-template-columns:1fr}
+  .proj-card.wide{grid-column:auto;display:block}
+  .goals-grid{grid-template-columns:1fr}
+  .int-grid{grid-template-columns:1fr 1fr}
+  .ach-row{grid-template-columns:1fr 1fr}
+  .write-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+  footer{flex-direction:column;gap:.5rem;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-left" href="#hero">
+    <div class="nav-mono">SA</div>
+    <span class="nav-name">Shazab Ali</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#goals">Goals</a></li>
+    <li><a href="#interests">Interests</a></li>
+    <li><a href="#writing">Writing</a></li>
+  </ul>
+  <a href="#contact" class="nav-btn">Say Hello</a>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-content rv">
+      <div class="hero-tag">Industrial &amp; Manufacturing Engineer</div>
+      <h1>Shazab<br><em>Ali</em></h1>
+      <p class="hero-degree"><strong>BSc IME</strong> · University of Engineering &amp; Technology, Lahore</p>
+      <p class="hero-loc">📍 Gujranwala / Lahore, Pakistan</p>
+      <p class="hero-bio">I'm a student who genuinely enjoys figuring out how systems work — supply chains, machines, and markets. Still learning, still building, and grateful for where I am so far.</p>
+      <div class="hero-actions">
+        <a href="#about" class="btn-primary">Get to Know Me</a>
+        <a href="#projects" class="btn-secondary">See My Work →</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hstat">
+          <div class="hstat-n">3.27</div>
+          <div class="hstat-l">CGPA<br>UET Lahore</div>
+        </div>
+        <div class="hstat">
+          <div class="hstat-n">8+</div>
+          <div class="hstat-l">Engineering<br>Projects</div>
+        </div>
+        <div class="hstat">
+          <div class="hstat-n">4</div>
+          <div class="hstat-l">Languages<br>Spoken</div>
+        </div>
+        <div class="hstat">
+          <div class="hstat-n">21.1</div>
+          <div class="hstat-l">Half Marathon<br>km</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-photo-col rv">
+      <div class="photo-frame">
+        <img src="data:image/jpeg;base64,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" alt="Shazab Ali" width="180" height="180">
+        <div class="photo-badge">Shazab Ali</div>
+      </div>
+      <div class="photo-avail">
+        <div class="avail-dot"></div>
+        <span>Open to opportunities</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+
+<!-- ══ ABOUT ══ -->
+<div class="sec" id="about">
+  <div class="sec-head rv">
+    <span class="sec-n">01 —</span><h2 class="sec-t">About Me</h2><div class="sec-r"></div>
+  </div>
+  <div class="about-layout">
+    <div class="about-body rv">
+      <p>I'm Shazab — originally from Gujranwala, studying at <strong>UET Lahore</strong>. I find real interest in how systems are designed, where they fail, and how they can be improved.</p>
+      <p>My focus has naturally moved toward <strong>Supply Chain and Operations</strong> — it's where engineering thinking has the most direct, real-world impact. My Final Year Project is in this space, and it's been the most engaged I've felt throughout my degree.</p>
+      <div class="verse">
+        <p class="verse-text">"And He found you lost and guided you."</p>
+        <p class="verse-src">— Quran, Ad-Duha (93:7) · A verse I carry with me</p>
+      </div>
+      <p>Outside university, I've taught mathematics for two years, run a small Shopify business, and started learning the Pakistan Stock Exchange from scratch. Curiosity and necessity are both good teachers.</p>
+      <p>I try to be honest about where I am and intentional about where I'm going. This page is a simple, genuine record of that.</p>
+    </div>
+    <div class="rv">
+      <div class="info-card">
+        <div class="info-row"><div class="info-lbl">Based in</div><div class="info-val">Gujranwala / Lahore, Pakistan</div></div>
+        <div class="info-row"><div class="info-lbl">Currently Studying</div><div class="info-val">BSc IME · UET Lahore<br>2023–Present · CGPA 3.27</div></div>
+        <div class="info-row"><div class="info-lbl">Considering Next</div><div class="info-val">MSc Supply Chain &amp; Management<br>CSS Civil Services<br><span style="font-size:11px;color:var(--ink3)">Both under serious thought</span></div></div>
+        <div class="info-row"><div class="info-lbl">Leadership</div><div class="info-val">QASF Youth Development<br>Program — 1 year</div></div>
+        <div class="info-row">
+          <div class="info-lbl">Languages</div>
+          <div style="margin-top:.35rem">
+            <div class="lang-row"><span class="lang-n">English</span><div class="lang-t"><div class="lang-f" style="width:80%"></div></div><span class="lang-l">B2</span></div>
+            <div class="lang-row"><span class="lang-n">German</span><div class="lang-t"><div class="lang-f" style="width:60%"></div></div><span class="lang-l">B1</span></div>
+            <div class="lang-row"><span class="lang-n">Urdu</span><div class="lang-t"><div class="lang-f" style="width:100%"></div></div><span class="lang-l">Native</span></div>
+            <div class="lang-row"><span class="lang-n">Punjabi</span><div class="lang-t"><div class="lang-f" style="width:100%"></div></div><span class="lang-l">Native</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SKILLS ══ -->
+<div class="sec" id="skills">
+  <div class="sec-head rv"><span class="sec-n">02 —</span><h2 class="sec-t">What I Know</h2><div class="sec-r"></div></div>
+  <div class="skill-grid rv">
+    <div class="skill-cell"><span class="sk-ico">⛓️</span><div class="sk-name">Supply Chain &amp; Logistics</div><div class="sk-desc">Inventory, demand forecasting, procurement, CPFR and supply chain analytics</div></div>
+    <div class="skill-cell"><span class="sk-ico">🏭</span><div class="sk-name">Production Planning</div><div class="sk-desc">Aggregate planning, capacity scheduling and workflow optimisation</div></div>
+    <div class="skill-cell"><span class="sk-ico">📐</span><div class="sk-name">CAD &amp; CAM</div><div class="sk-desc">SolidWorks &amp; AutoCAD — 3D assembly, drafting and machining simulation</div></div>
+    <div class="skill-cell"><span class="sk-ico">📊</span><div class="sk-name">MS Excel &amp; Data</div><div class="sk-desc">Modelling, analysis, KPI dashboards and operations reporting</div></div>
+    <div class="skill-cell"><span class="sk-ico">🐍</span><div class="sk-name">Python (Learning)</div><div class="sk-desc">Basic data tasks and ML workflows — building this steadily</div></div>
+    <div class="skill-cell"><span class="sk-ico">🛒</span><div class="sk-name">E-Commerce Ops</div><div class="sk-desc">Shopify, supplier sourcing, fulfilment and analytics — hands-on experience</div></div>
+    <div class="skill-cell"><span class="sk-ico">📈</span><div class="sk-name">Stock Market</div><div class="sk-desc">Self-directed equity trading on PSX — market research and risk thinking</div></div>
+    <div class="skill-cell"><span class="sk-ico">🗣️</span><div class="sk-name">Teaching &amp; Communication</div><div class="sk-desc">2 years teaching mathematics — clarity, patience, structured delivery</div></div>
+    <div class="skill-cell"><span class="sk-ico">🧠</span><div class="sk-name">Analytical Thinking</div><div class="sk-desc">Root-cause analysis, problem decomposition and process improvement</div></div>
+  </div>
+</div>
+
+<!-- ══ EXPERIENCE ══ -->
+<div class="sec" id="experience">
+  <div class="sec-head rv"><span class="sec-n">03 —</span><h2 class="sec-t">Experience &amp; Education</h2><div class="sec-r"></div></div>
+  <div class="tl">
+    <div class="tl-item rv"><div class="tl-dot"></div><span class="tl-tag">2026 — Present · Finance</span><div class="tl-role">Independent Equity Trader</div><div class="tl-org">Pakistan Stock Exchange</div><div class="tl-desc">Learning before earning. Studying market behaviour with the same structured approach I bring to engineering problems. Still early, but intentional.</div></div>
+    <div class="tl-item rv"><div class="tl-dot"></div><span class="tl-tag">2023 — Present · Education</span><div class="tl-role">BSc Industrial &amp; Manufacturing Engineering</div><div class="tl-org">UET Lahore · CGPA 3.27</div><div class="tl-desc">Supply chain systems, production planning, thermofluid mechanics, and CAD/CAM. Final Year Project in Supply Chain &amp; Management — the part I've invested in most.</div></div>
+    <div class="tl-item rv"><div class="tl-dot"></div><span class="tl-tag">2025 — 2026 · Entrepreneurship</span><div class="tl-role">E-Commerce Operator</div><div class="tl-org">Self-Employed · Shopify</div><div class="tl-desc">Ran an independent online store — supplier negotiations, product research, inventory, fulfilment, analytics. A practical supply chain education.</div></div>
+    <div class="tl-item rv"><div class="tl-dot"></div><span class="tl-tag">2023 — 2025 · Teaching</span><div class="tl-role">Mathematics Teacher</div><div class="tl-org">Lahore College &amp; Al-Ilm Academy</div><div class="tl-desc">Taught secondary and college-level mathematics over two years. Designed lessons, tracked progress, and learned what clear communication actually requires.</div></div>
+    <div class="tl-item rv"><div class="tl-dot"></div><span class="tl-tag">Leadership</span><div class="tl-role">Youth Development &amp; Leadership Program</div><div class="tl-org">QASF · One Year</div><div class="tl-desc">A year focused on professional readiness, leadership and purpose-driven career development.</div></div>
+    <div class="tl-item rv"><div class="tl-dot"></div><span class="tl-tag">2021 — 2023 · Education</span><div class="tl-role">FSc Pre-Engineering</div><div class="tl-org">BISE Gujranwala</div><div class="tl-desc">The foundation — physics, mathematics, chemistry. Where structured thinking began.</div></div>
+  </div>
+</div>
+
+<!-- ══ PROJECTS ══ -->
+<div class="sec" id="projects">
+  <div class="sec-head rv"><span class="sec-n">04 —</span><h2 class="sec-t">Projects</h2><div class="sec-r"></div></div>
+  <div class="proj-grid rv">
+    <div class="proj-card wide">
+      <div><span class="proj-tag fyp">★ Final Year Project</span></div>
+      <div>
+        <div class="proj-name">Supply Chain &amp; Management — FYP</div>
+        <div class="proj-desc">Demand forecasting, inventory optimisation and supply chain analytics applied to a real scenario. The project I've thought hardest about — the one that most reflects where I want to grow professionally.</div>
+        <div class="proj-pills"><span class="pill">Demand Forecasting</span><span class="pill">Inventory Optimisation</span><span class="pill">SC Analytics</span></div>
+      </div>
+    </div>
+    <div class="proj-card"><span class="proj-tag">AI · Systems</span><div class="proj-name">Smart AI Traffic Light System</div><div class="proj-desc">Adaptive traffic optimisation using AI — real-time signal control responding to actual flow rather than fixed timers.</div><div class="proj-pills"><span class="pill">AI</span><span class="pill">Systems Design</span></div></div>
+    <div class="proj-card"><span class="proj-tag">CAD+CAM</span><div class="proj-name">Jet Engine CAD+CAM Model</div><div class="proj-desc">Full parametric 3D model with machining strategy, toolpaths and manufacturing documentation.</div><div class="proj-pills"><span class="pill">SolidWorks</span><span class="pill">CAM</span></div></div>
+    <div class="proj-card"><span class="proj-tag">Operations</span><div class="proj-name">Aggregate Planning — Workshop</div><div class="proj-desc">Planning model to optimise labour allocation, machine scheduling and throughput.</div><div class="proj-pills"><span class="pill">Production Planning</span><span class="pill">Excel</span></div></div>
+    <div class="proj-card"><span class="proj-tag">CAD · Robotics</span><div class="proj-name">Dropcopter Drone Model</div><div class="proj-desc">Complete 3D assembly and engineering documentation for a multi-rotor drone.</div><div class="proj-pills"><span class="pill">SolidWorks</span><span class="pill">Assembly</span></div></div>
+    <div class="proj-card"><span class="proj-tag">Thermofluid</span><div class="proj-name">Hydraulic Excavator OEL</div><div class="proj-desc">Hands-on study of hydraulic systems, fluid mechanics and actuator dynamics.</div><div class="proj-pills"><span class="pill">Thermofluid</span><span class="pill">Lab</span></div></div>
+    <div class="proj-card"><span class="proj-tag">Manufacturing</span><div class="proj-name">Aluminium Cam Pin Machining</div><div class="proj-desc">Machining and QC workflow for a precision aluminium cam pin — tolerancing and measurement.</div><div class="proj-pills"><span class="pill">Machining</span><span class="pill">Precision</span></div></div>
+    <div class="proj-card"><span class="proj-tag">Assistive Tech</span><div class="proj-name">Walking Assistance Device</div><div class="proj-desc">3D assembly and documentation for a mobility aid prototype — ergonomics and mechanical design.</div><div class="proj-pills"><span class="pill">CAD</span><span class="pill">Human Factors</span></div></div>
+  </div>
+</div>
+
+<!-- ══ GOALS ══ -->
+<div class="sec" id="goals">
+  <div class="sec-head rv"><span class="sec-n">05 —</span><h2 class="sec-t">Where I'm Headed</h2><div class="sec-r"></div></div>
+  <div class="goals-grid rv">
+    <div class="goal-card">
+      <span class="goal-ico">🎓</span>
+      <div class="goal-title">MSc Supply Chain &amp; Management</div>
+      <div class="goal-desc">A path I'm genuinely drawn to — deepening expertise in global logistics, procurement and operations research. Exploring options locally and internationally.</div>
+      <span class="badge badge-y">Aspiring</span>
+    </div>
+    <div class="goal-card">
+      <span class="goal-ico">🇵🇰</span>
+      <div class="goal-title">CSS — Civil Services of Pakistan</div>
+      <div class="goal-desc">Seriously considering this path alongside MSc. An opportunity to serve at a national level — applying analytical and leadership skills in governance and public administration.</div>
+      <span class="badge badge-y">Exploring</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══ INTERESTS ══ -->
+<div class="sec" id="interests">
+  <div class="sec-head rv"><span class="sec-n">06 —</span><h2 class="sec-t">Outside of Work</h2><div class="sec-r"></div></div>
+  <div class="int-grid rv">
+    <div class="int-card">
+      <span class="int-ico">⚽</span>
+      <div class="int-name">Football</div>
+      <div class="int-note">The game I grew up with — strategy, teamwork, and the honest joy of playing well</div>
+    </div>
+    <div class="int-card">
+      <span class="int-ico">🏃</span>
+      <div class="int-name">Running</div>
+      <div class="int-note">Finished a 21.1 km half marathon — your mind matters more than your legs</div>
+    </div>
+    <div class="int-card">
+      <span class="int-ico">✈️</span>
+      <div class="int-name">Purposeful Travel</div>
+      <div class="int-note">I travel to understand, not just to see — different systems, cultures, ways of living</div>
+    </div>
+    <div class="int-card">
+      <span class="int-ico">🏋️</span>
+      <div class="int-name">Sports &amp; Fitness</div>
+      <div class="int-note">Physical discipline and mental resilience — the two go together more than most realise</div>
+    </div>
+  </div>
+  <div class="ach-row rv">
+    <div class="ach-cell"><div class="ach-num">21.1 km</div><div class="ach-lbl">Half Marathon</div></div>
+    <div class="ach-cell"><div class="ach-num">4</div><div class="ach-lbl">Languages Spoken</div></div>
+    <div class="ach-cell"><div class="ach-num">B1</div><div class="ach-lbl">German Level</div></div>
+    <div class="ach-cell"><div class="ach-num">1 yr</div><div class="ach-lbl">QASF Program</div></div>
+  </div>
+</div>
+
+<!-- ══ WRITING ══ -->
+<div class="sec" id="writing">
+  <div class="sec-head rv"><span class="sec-n">07 —</span><h2 class="sec-t">Things I Think About</h2><div class="sec-r"></div></div>
+  <p class="write-note rv">Ideas from studying engineering and trying to make sense of things. Nothing polished yet — just honest thinking I plan to write down properly.</p>
+  <div class="write-grid rv">
+    <div class="write-card">
+      <div class="w-topic">Supply Chain</div>
+      <div class="w-title">Why Demand Forecasting Fails — And Where the Fix Lives</div>
+      <div class="w-blurb">Most forecasting problems aren't data problems. They're assumptions problems. A reflection from my FYP.</div>
+      <div class="w-foot"><span class="w-status">Writing Soon</span><a href="mailto:rshazab91@gmail.com" class="w-link">Notify me →</a></div>
+    </div>
+    <div class="write-card">
+      <div class="w-topic">Career</div>
+      <div class="w-title">MSc vs CSS vs Industry: How I'm Thinking Through It</div>
+      <div class="w-blurb">A frank look at three paths I'm weighing — trade-offs, uncertainty, and how I'm approaching the decision.</div>
+      <div class="w-foot"><span class="w-status">Writing Soon</span><a href="mailto:rshazab91@gmail.com" class="w-link">Notify me →</a></div>
+    </div>
+    <div class="write-card">
+      <div class="w-topic">Reflection</div>
+      <div class="w-title">What Teaching Maths for Two Years Actually Taught Me</div>
+      <div class="w-blurb">You don't really understand something until you explain it. Two years in a classroom changed how I think.</div>
+      <div class="w-foot"><span class="w-status">Writing Soon</span><a href="mailto:rshazab91@gmail.com" class="w-link">Notify me →</a></div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /wrap -->
+
+<!-- ══ CONTACT ══ -->
+<section id="contact">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="sec-n">08 —</span><h2 class="sec-t">Let's Talk</h2><div class="sec-r"></div></div>
+    <div class="contact-grid">
+      <div class="rv">
+        <p class="ct-lead">Open to good <em>conversations,</em> opportunities &amp; honest feedback.</p>
+        <p class="ct-body">Whether you're here about a collaboration, academic guidance, or just to exchange ideas — reach out. I reply to everyone who writes with genuine intent.</p>
+        <div class="ct-tags">
+          <span class="ctag">Supply Chain</span>
+          <span class="ctag">MSc Guidance</span>
+          <span class="ctag">CSS Aspirants</span>
+          <span class="ctag">Collaboration</span>
+        </div>
+        <div class="avail-bar">
+          <div class="avail-dot"></div>
+          <div class="avail-txt"><strong>Open to opportunities</strong> — projects and academic guidance welcome.</div>
+        </div>
+      </div>
+      <div class="c-links rv">
+        <a class="c-link" href="mailto:rshazab91@gmail.com">
+          <span class="c-ico">✉️</span><div><div class="c-lbl">Email</div><div class="c-val">rshazab91@gmail.com</div></div><span class="c-arr">→</span>
+        </a>
+        <a class="c-link" href="https://www.linkedin.com/in/shazab-ali" target="_blank" rel="noopener">
+          <span class="c-ico">💼</span><div><div class="c-lbl">LinkedIn</div><div class="c-val">linkedin.com/in/shazab-ali</div></div><span class="c-arr">→</span>
+        </a>
+        <a class="c-link" href="tel:+923076064194">
+          <span class="c-ico">📞</span><div><div class="c-lbl">Phone / WhatsApp</div><div class="c-val">+92 307 606 4194</div></div><span class="c-arr">→</span>
+        </a>
+        <a class="c-link" href="mailto:rshazab91@gmail.com?subject=CV Request — Shazab Ali">
+          <span class="c-ico">📄</span><div><div class="c-lbl">Request CV</div><div class="c-val">Email me — I'll send it right over</div></div><span class="c-arr">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="ft-l">Shazab Ali</span>
+  <span class="ft-r">Lahore, Pakistan · © 2025</span>
+</footer>
+
+<script>
+const els = document.querySelectorAll('.rv');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if(e.isIntersecting){
+      setTimeout(() => e.target.classList.add('in'), i * 55);
+      io.unobserve(e.target);
+    }
+  });
+}, {threshold:.07, rootMargin:'0px 0px -20px 0px'});
+els.forEach(el => io.observe(el));
+</script>
+</body>
+</html>
